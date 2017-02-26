@@ -1,0 +1,26 @@
+{% extends "heading.html" %}
+{% block content %}
+
+ <form>
+    <h2>Add a food item</h2>
+    <input type="text" name="food">
+     {% if items %}
+       {% for item in items %}
+         <input type="hidden" name="food" value="{{item}}">
+       {% endfor %}
+      {% endif %}
+    <button>Add Button</button>
+    {% if items %}
+        <br>
+        <br>
+        <h2>Here are the items </h2>
+        <ul>
+            {% for item in items %}
+                <li> {{item}} </li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+<!-- <h2>Hello, {{name}} </h2> -->
+
+ </form>
+{% endblock %}
